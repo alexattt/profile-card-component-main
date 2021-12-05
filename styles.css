@@ -130,6 +130,13 @@ body {
       align-self: center;
   border: 5px solid white;
   border-radius: 50%;
+  -webkit-transition: border 0.3s ease-out;
+  transition: border 0.3s ease-out;
+  cursor: pointer;
+}
+
+.user-info .user-photo:hover {
+  border: 5px solid #19a2ae;
 }
 
 .user-info .name-age {
@@ -168,6 +175,7 @@ body {
           justify-content: space-between;
   width: 70%;
   padding: 15px 0 20px 0;
+  margin-right: 10px;
 }
 
 .user-stats .stats-container {
