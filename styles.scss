@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+$dark-cyan: hsl(185, 75%, 39%);
+$dark-desat-blue: hsl(229, 23%, 23%);
+$dark-gray-blue: hsl(227, 10%, 46%);
+$dark-gray: hsl(0, 0%, 59%);
+$font-size: 18px;
+$font-family: 'Kumbh Sans', sans-serif;
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+  
+/***** some base definitions from https://piccalil.li/blog/a-modern-css-reset/ *****/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/***** main styles *****/
+
+body {
+  background-color: $dark-cyan;
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $dark-desat-blue;
+  overflow-x: hidden;
+}
+
+.backg-bubbles {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  .top-bubble {
+    position: absolute;
+    bottom: 50%;
+    right:50%;
+  }
+
+  .btm-bubble {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+  }
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 60vh;
+  right: 0;
+  left: 0;
+  top: 20%;
+  bottom: 0;
+  animation: grow 1s ease-out;
+}
+
+.card-container {
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+
+  .card-pattern {
+    border-radius: 15px 15px 0 0;
+  }
+
+  hr {
+    width: 100%;
+    border-top: 1px solid $dark-gray;
+    opacity: 0.3;
+  }
+
+  @media screen and (max-width: 375px) {
+    margin: 30px;
+  }
+}
+
+.user-info {
+
+  .user-photo {
+    position: relative;
+    bottom: 40px;
+    width: 100px;
+    height: 100px;
+    align-self: center;
+    border: 5px solid white;
+    border-radius: 50%;
+  }
+
+  .name-age {
+    position: relative;
+    bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+    width: 135px;
+
+    .name {
+      font-weight: 700;
+    }
+
+    .age {
+      color: $dark-gray-blue;
+    }
+  }
+
+  .location {
+    position: relative;
+    bottom: 15px;
+    align-self: center;
+    color: $dark-gray-blue;
+    font-size: 15px;
+  }
+}
+
+.user-stats {
+  justify-content: space-between;
+  width: 70%;
+  padding: 15px 0 20px 0;
+
+  .stats-container {
+    text-align: center;
+
+    .stat-count {
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .stat-title {
+      font-size: 10px;
+      color: $dark-gray-blue;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+footer {
+  .attribution {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 14px;
+    padding: 30px;
+    color: black;
+  
+    a {
+      color: white;
+    }
+
+    @media screen and (min-width:800px) {
+      bottom: 3%;
+    }
+  }
+}
+
+/*** animations ***/
+@keyframes grow { 
+  0% { 
+    height: 40vh;
+  } 
+  100% {
+    height: 60vh;
+  }
+}

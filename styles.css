@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/***** some base definitions from https://piccalil.li/blog/a-modern-css-reset/ *****/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/***** main styles *****/
+body {
+  background-color: #19a2ae;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 18px;
+  color: #2d3248;
+  overflow-x: hidden;
+}
+
+.backg-bubbles {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.backg-bubbles .top-bubble {
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+}
+
+.backg-bubbles .btm-bubble {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+}
+
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  height: 60vh;
+  right: 0;
+  left: 0;
+  top: 20%;
+  bottom: 0;
+  -webkit-animation: grow 1s ease-out;
+          animation: grow 1s ease-out;
+}
+
+.card-container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.card-container .card-pattern {
+  border-radius: 15px 15px 0 0;
+}
+
+.card-container hr {
+  width: 100%;
+  border-top: 1px solid #969696;
+  opacity: 0.3;
+}
+
+@media screen and (max-width: 375px) {
+  .card-container {
+    margin: 30px;
+  }
+}
+
+.user-info .user-photo {
+  position: relative;
+  bottom: 40px;
+  width: 100px;
+  height: 100px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+.user-info .name-age {
+  position: relative;
+  bottom: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 135px;
+}
+
+.user-info .name-age .name {
+  font-weight: 700;
+}
+
+.user-info .name-age .age {
+  color: #6a6f81;
+}
+
+.user-info .location {
+  position: relative;
+  bottom: 15px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #6a6f81;
+  font-size: 15px;
+}
+
+.user-stats {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 70%;
+  padding: 15px 0 20px 0;
+}
+
+.user-stats .stats-container {
+  text-align: center;
+}
+
+.user-stats .stats-container .stat-count {
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.user-stats .stats-container .stat-title {
+  font-size: 10px;
+  color: #6a6f81;
+  letter-spacing: 2px;
+}
+
+footer .attribution {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 14px;
+  padding: 30px;
+  color: black;
+}
+
+footer .attribution a {
+  color: white;
+}
+
+@media screen and (min-width: 800px) {
+  footer .attribution {
+    bottom: 3%;
+  }
+}
+
+/*** animations ***/
+@-webkit-keyframes grow {
+  0% {
+    height: 40vh;
+  }
+  100% {
+    height: 60vh;
+  }
+}
+@keyframes grow {
+  0% {
+    height: 40vh;
+  }
+  100% {
+    height: 60vh;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
